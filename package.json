@@ -1,0 +1,25 @@
+{
+  "name": "proyecto-1.4-sistema-de-gestion-biblioteca",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Proyecto_Biblioteca_BE",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rudy100You/Proyecto-1.4-sistema-de-gestion-biblioteca.git"
+  },
+  "author": "Rudy Sarabia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rudy100You/Proyecto-1.4-sistema-de-gestion-biblioteca/issues"
+  },
+  "homepage": "https://github.com/Rudy100You/Proyecto-1.4-sistema-de-gestion-biblioteca#readme",
+  "dependencies": {
+    "express.js": "^1.0.0",
+    "mongodb": "^3.2.6",
+    "mysql": "^2.17.1",
+    "vue": "^2.6.10"
+  }
+}
