@@ -1,25 +1,42 @@
 {
   "name": "proyecto-1.4-sistema-de-gestion-biblioteca",
-  "version": "1.0.0",
-  "description": "",
-  "main": "Proyecto_Biblioteca_BE",
+  "version": "1.1.0",
+  "description": "Aplicación web de biblioteca Otto Krause 6CI1",
+  "main": "./src/index.js",
+  "directories": {
+    "src": "src"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rudy100You/Proyecto-1.4-sistema-de-gestion-biblioteca.git"
+    "url": "git+https://github.com/otto-krause/Proyecto-1.4-sistema-de-gestion-biblioteca.git"
   },
+  "keywords": [
+    "biblioteca"
+  ],
   "author": "Rudy Sarabia",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Rudy100You/Proyecto-1.4-sistema-de-gestion-biblioteca/issues"
+    "url": "https://github.com/otto-krause/Proyecto-1.4-sistema-de-gestion-biblioteca/issues"
   },
-  "homepage": "https://github.com/Rudy100You/Proyecto-1.4-sistema-de-gestion-biblioteca#readme",
+  "homepage": "https://github.com/otto-krause/Proyecto-1.4-sistema-de-gestion-biblioteca#readme",
   "dependencies": {
-    "express.js": "^1.0.0",
-    "mongodb": "^3.2.6",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-mysql-session": "^2.1.0",
+    "express-session": "^1.16.2",
+    "express-validator": "^6.2.0",
+    "morgan": "^1.9.1",
     "mysql": "^2.17.1",
-    "vue": "^2.6.10"
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "timeago.js": "^4.0.0-beta.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
   }
 }
