@@ -30,7 +30,7 @@ app.use(flash());
 
 //variables globales
 app.use((req, res, next)=>{
-
+    app.locals.success=flash('dou');
     next();
 });
 app.get('/img/',(req, res)=>{
@@ -40,9 +40,10 @@ app.get('/img/',(req, res)=>{
 app.use(require('./routes/index'));
 app.use(require('./routes/authentication'));
 app.use('/links',require('./routes/links'));
-
+app.use('/public', require('./routes/srcFiles'))
 //archivos publicos
 app.use(express.static(path.join(__dirname,'public')));
+
 //link start!
 app.listen(app.get('port'),()=>{
     console.log(`BlbliOK | Servidor iniciado en puerto ${app.get('port')}`);
