@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const flash = require('connect-flash');
-
+const bodyParser = require('body-parser');
 //inicializaciones
 const app = express();
 
@@ -27,7 +27,8 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 app.use(flash());
-
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 //variables globales
 app.use((req, res, next)=>{
     app.locals.success=flash('dou');

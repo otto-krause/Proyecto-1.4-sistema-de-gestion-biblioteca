@@ -13,7 +13,7 @@ router.post('/add', async(req,res)=>{
         url,
         descripcion
     };
-    await pool.query('INSERT INTO links set ?', [newLink]).catch((err)=>{next(err);})
+    await pool.query('INSERT INTO links set ?', [newLink]).catch((err)=>{req.next(err)})
     res.send("recibido");
 });
 
