@@ -5,8 +5,13 @@ router.get("/signup",(req,res)=>{
     res.render("../views/auth/signup.hbs");
 });
 
-router.post("/signup",(req,res)=>{
 
+router.get("/login",(req,res)=>{
+    res.render("../views/auth/login.hbs");
 });
 
+router.post("/login", (req,res)=>{
+    var {user, password} = req.body;
+    console.log(user +" "+ password);
+});
 module.exports = router;

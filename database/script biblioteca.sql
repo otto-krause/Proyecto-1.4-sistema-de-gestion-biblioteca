@@ -20,7 +20,6 @@ create table Autor(
 
 ALTER TABLE Autor MODIFY cod_autor INT NOT NULL AUTO_INCREMENT;
 
-
 create table Libro(
     cod_libro int not null,
     titulo varchar(50) not null,
@@ -36,10 +35,8 @@ create table Libro_Autor(
     foreign key (cod_libro) references Libro (cod_libro),
     foreign key (cod_autor) references Autor (cod_autor));
 
-    
-
 create table Ejemplar(
-    isbn int(15) not null,
+    isbn bigint(15) not null,
     cod_libro int not null,
     estado varchar(50) not null,
     primary key (isbn, cod_libro),
@@ -48,7 +45,7 @@ create table Ejemplar(
 create table Prestamo(
     cod_prestamo int not null,
     cod_socio int not null,
-    isbn int not null,
+    isbn bigint not null,
     fecha_inicio date not null,
     fecha_fin date not null,
     primary key (cod_prestamo, cod_socio, isbn),

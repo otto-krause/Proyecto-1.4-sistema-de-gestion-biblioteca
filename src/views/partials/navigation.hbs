@@ -1,22 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <img class="navbar-brand" href="/home" src="/img/EscudoOttoKrause.png" style="width: 2.3rem; height: 2.8rem;">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+  <a class="navbar-brand" href="/">
+    <div class="hide-this allign-middle" style="vertical-align: middle; float: right">Sistema de Gestión de biblioteca</div>
+    <img src="/img/EscudoOttoKrause.png" style="width: 2.5rem; height: 2.8rem; margin-right: 0.5rem; float:left" class="d-inline-block align-middle">
+  </a> 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="#navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/home"> Sistema de Gestión de biblioteca <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item justify-item-end">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="#">Control</a>
+      <a class="nav-item nav-link " href="/libros" tabindex="-1">Lista de libros</a>
+    </div>
   </div>
+  <style>
+    @media screen and (max-width:960px) {
+      .hide-this{
+        display:none;
+      }
+      
+    }
+  </style>
 </nav>
