@@ -39,8 +39,8 @@ app.get('/img/',(req, res)=>{
 });
 //rutas
 app.use(require('./routes/index'));
-app.use(require('./routes/authentication'));
-app.use('/links',require('./routes/links'));
+app.use('/auth',require('./routes/authentication'));
+app.use('/control',require('./routes/control'));
 app.use('/public', require('./routes/srcFiles'))
 //archivos publicos
 app.use(express.static(path.join(__dirname,'public')));

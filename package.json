@@ -2,12 +2,12 @@
   "name": "proyecto-1.4-sistema-de-gestion-biblioteca",
   "version": "1.1.0",
   "description": "Aplicación web de biblioteca Otto Krause 6CI1",
-  "main": "./src/index.js",
+  "main": "./src/app.js",
   "directories": {
     "src": "src"
   },
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
