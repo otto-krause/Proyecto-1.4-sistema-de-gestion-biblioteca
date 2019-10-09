@@ -20,5 +20,7 @@ router.get('/img/background', (req,res)=>{
 router.get('/img/escudo',(req, res)=>{
     res.sendFile('../public/img/EscudoOttoKrause.png');
 });
-
+router.get('/img/favicon', (req,res)=>{
+    res.sendFile(path.join(__dirname,'../public/img/'))
+});
 module.exports = router;

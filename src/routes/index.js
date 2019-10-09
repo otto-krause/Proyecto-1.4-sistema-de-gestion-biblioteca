@@ -11,11 +11,13 @@ router.get('/libros', async (req,res)=>{
     if(!err)
         res.setTimeout(5000);
         console.log(rows);
-        res.render('../views/layouts/list.hbs', {rows});
+        res.render('../views/layouts/libros.hbs', {rows});
     }).catch((err)=>{
         next(err);
     });
-
+});
+router.post('/libros', async(req,res)=>{
+    var {nombre_autor, libro, } = req.body;
 });
 
 module.exports = router;
