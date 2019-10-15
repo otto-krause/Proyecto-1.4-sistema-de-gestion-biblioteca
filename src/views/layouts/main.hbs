@@ -4,28 +4,34 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="icon" type="image/png" href="../public/img/favicon" >
+        <link rel="icon" type="image/png" href="#">
         <title>Sistema de gestión de biblioteca - Otto Krause</title>
         <link rel='stylesheet' href= "../public/css/1">
         <script src="../public/scripts/1"></script>
         <script src="../public/scripts/2"></script>
         <script src="../public/scripts/3"></script>
     </head>
-    <body>
-        {{>navigation}} 
-        
+    <body class="h-100">
+        {{>navigation}}    
         {{{body}}}
-        
-
     </body>
-    <footer class="justify-content-center text-center text-white bg-dark container-fluid fixed-bottom" aria-hidden="false">
+    <footer class="justify-content-center text-center text-white bg-dark container-fluid" aria-hidden="false">
         <div>Escuela técnica N°1 D.E. 4° Otto Krause</div>
         <div>Desarrollado por 6CI1 (2019)</div>
     </footer>
     <style>
+        html{
+            position: relative;
+            min-height: 100%;
+        }
+        body{
+            height:100vh;
+        }
         footer{
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            position:absolute;
+            bottom: -5;
         }
     </style>
 </html>

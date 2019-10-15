@@ -21,6 +21,6 @@ router.get('/img/escudo',(req, res)=>{
     res.sendFile('../public/img/EscudoOttoKrause.png');
 });
 router.get('/img/favicon', (req,res)=>{
-    res.sendFile(path.join(__dirname,'../public/img/'))
+    res.sendFile(path.join(__dirname,'../public/img/book.png'))
 });
 module.exports = router;

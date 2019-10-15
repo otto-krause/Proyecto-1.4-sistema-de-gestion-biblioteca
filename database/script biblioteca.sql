@@ -47,7 +47,7 @@ create table Prestamo(
     cod_socio int not null,
     isbn bigint not null,
     fecha_inicio date not null,
-    fecha_fin date not null,
+    fecha_fin date null,
     primary key (cod_prestamo, cod_socio, isbn),
     foreign key (cod_socio) references Socio (cod_socio),
     foreign key (isbn) references Ejemplar (isbn));
@@ -65,3 +65,9 @@ create table Autoridad_Socio(
     primary key (idAutoridad, cod_socio),
     /*foreign key (idAutoridad) references Autoridades (idAutoridad),*/
     foreign key (cod_socio) references Socio (cod_socio));
+
+CREATE TABLE usuarios( 
+    username VARCHAR(18) NOT NULL, 
+    password VARCHAR(64) NOT NULL , 
+    PRIMARY KEY (username, password)
+    );

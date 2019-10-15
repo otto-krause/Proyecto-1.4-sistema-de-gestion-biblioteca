@@ -6,14 +6,20 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="#navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="/control">Control</a>
-      <a class="nav-item nav-link " href="/libros" tabindex="-1">Lista de libros</a>
+      <a class="nav-item nav-link" href="/libros">Lista de libros</a>
+      {{#if user}}
+          <a class="nav-item nav-link" href="/auth/logout">Logout</a>
+      {{else}}
+          <a class="nav-item nav-link" href="/auth/login">Login</a>
+      {{/if}}
+      
     </div>
   </div>
   <style>
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:441px) {
       .hide-this{
         display:none;
       }
