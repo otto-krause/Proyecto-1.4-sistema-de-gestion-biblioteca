@@ -10,7 +10,7 @@ router.get('/', (req,res)=>{
 router.get('/libros', async (req,res)=>{
     var consulta = "select * from tabla_Libros where ";
     consulta = searchFormQuery(datos,consulta);    
-    await pool.query(String(consulta), (err, rows)=>{
+    await pool.query(consulta, (err, rows)=>{
     if(!err)
         res.setTimeout(5000);
         console.log(rows);
@@ -25,7 +25,7 @@ router.get('/libros', async (req,res)=>{
         console.log(datos);
         res.render('../views/layouts/libros.hbs', {rows, datos});
     }).catch((err)=>{
-        next(err);
+        done(err);
     });
 });
 

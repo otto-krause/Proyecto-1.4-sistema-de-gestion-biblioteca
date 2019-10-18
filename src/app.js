@@ -27,24 +27,13 @@ app.engine('.hbs',exphbs({
 }));
 app.set('view engine', '.hbs');
 Handlebars.registerHelper('selected0', (datos)=> {
-    if(!datos.disponible)
+    if(datos.disponible != '')
     {
-        return 'selected';  
+        return 'selected'; 
     }
-    return;
-})
-Handlebars.registerHelper('selected1', (datos)=> {
-    if(datos.disponible ===1){
-      return 'selected';  
+    else{
+
     }
-    return;
-})
-Handlebars.registerHelper('selected2', (datos)=> {
-    if(datos.disponible ===0 )
-    {
-        return 'selected';  
-      }
-    return;
 })
 //middlewares
 app.use(session({

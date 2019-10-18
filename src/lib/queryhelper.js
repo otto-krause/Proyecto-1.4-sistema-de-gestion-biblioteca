@@ -1,129 +1,53 @@
 module.exports = {
     searchFormQuery(datos, consulta){
-        if(datos){
-            if(datos.codlibro)
+        if(datos){   
+            console.log(Object.keys(datos).length);
+            console.log(Object.values(datos)[0]);
+            for(let i = 0; i < Object.keys(datos).length; i++)
             {
-                var count = parseInt(0);
-                for (const key in datos) {
-                    if (!datos[key]) {
-                        count ++;
+                if(Object.values(datos)[i]){
+                    var count = parseInt(0);
+                    for (let key in datos) {
+                        if (!datos[key]) {
+                            count ++;
+                        }
                     }
-                }
-                console.log(count)
-                console.log(consulta === 'select * from tabla_Libros where '?true:false);
-                if (count === 6 || consulta === 'select * from tabla_Libros where '){
-                    consulta += ('cod_libro like ' + '"%'+datos.codlibro+'%"');
-                }
-                else{
-                    consulta += (' and cod_libro like ' + '"%'+datos.codlibro+'%"');
+                    console.log(count)
+                    console.log(consulta === 'select * from tabla_Libros where '?true:false);
+                    if (count != 6 && consulta != 'select * from tabla_Libros where '){
+                        consulta += ' and ';
+                    }
+                    console.log(i);
+                    switch(i){
+                            case 0:
+                                consulta += (`cod_libro like "%${Object.values(datos)[i]}%"`);
+                                break;
+                            case 1:
+                                consulta += (`isbn like "%${Object.values(datos)[i]}%"`);
+                                break;
+                            case 2:
+                                consulta += (`titulo like "%${Object.values(datos)[i]}%"`);
+                                break;
+                            case 3:
+                                consulta += (`nombre like "%${Object.values(datos)[i]}%"`);
+                                break;
+                            case 4:
+                                consulta += (`apellido like "%${Object.values(datos)[i]}%"`);
+                                break;
+                            case 5:
+                                consulta += (`editorial like "%${Object.values(datos)[i]}%"`);
+                                break;
+                            case 6:
+                                consulta += (`estado like "%${Object.values(datos)[i]}%"`);
+                                break;
+                    }
                 }
             }
-            if(datos.isbn){
-                var count = parseInt(0);
-                for (const key in datos) {
-                    if (!datos[key]) {
-                        count ++;
-                    }
-                }
-                console.log(count)
-                if (count === 6 || consulta === 'select * from tabla_Libros where '){
-                    consulta += ('isbn like ' + '"%'+datos.isbn+'%"');
-                }
-                else{
-                    consulta += (' and isbn like ' + '"%'+datos.isbn+'%"');
-                }
-            }
-            if(datos.titulo){
-                var count = parseInt(0);
-                for (const key in datos) {
-                    if (!datos[key]) {
-                        count ++;
-                    }
-                }
-                console.log(count)
-                if (count === 6 || consulta === 'select * from tabla_Libros where '){
-                    consulta += ('titulo like ' + '"%'+ datos.titulo + '%"');
-                    console.log(consulta)
-                }
-                else{
-                    consulta += (' and titulo like ' + '"%'+ datos.titulo + '%"');
-                    console.log(consulta)
-                }
-            }
-            if(datos.nombre){
-                var count = parseInt(0);
-                for (const key in datos) {
-                    if (!datos[key]) {
-                        count ++;
-                    }
-                }
-                console.log(count)
-                if (count === 6 || consulta === 'select * from tabla_Libros where '){
-                    consulta += ('nombre like ' + '"%'+ datos.nombre + '%"');
-                    console.log(consulta);
-                }
-                else{
-                    consulta += (' and nombre like ' + '"%'+ datos.nombre + '%"');
-                    console.log(consulta);
-                }
-            }
-            if(datos.apellido){
-                var count = parseInt(0);
-                for (const key in datos) {
-                    if (!datos[key]) {
-                        count ++;
-                    }
-                }
-                console.log(count)
-                if (count === 6 || consulta === 'select * from tabla_Libros where '){
-                    consulta += ('apellido like ' + '"%'+ datos.apellido + '%"');
-                    console.log(consulta);
-                }
-                else{
-                    consulta += (' and apellido like ' + '"%'+ datos.apellido + '%"');
-                    console.log(consulta);
-                }
-            }
-            if(datos.editorial){
-                var count = parseInt(0);
-                for (const key in datos) {
-                    if (!datos[key]) {
-                        count ++;
-                    }
-                }
-                console.log(count)
-                if (count === 6 && consulta === 'select * from tabla_Libros where '){
-                    consulta += ('editorial like ' + '"%'+ datos.editorial + '%"');
-                    console.log(consulta);
-                }
-                else{
-                    consulta += (' and editorial like ' + '"%'+ datos.editorial + '%"');
-                    console.log(consulta);
-                }
-            }
-            if(datos.disponible){
-                var count = parseInt(0);
-                for (const key in datos) {
-                    if (!datos[key]) {
-                        count ++;
-                    }
-                }
-                console.log(count)
-                   if (count === 6 && consulta === 'select * from tabla_Libros where '){
-                    consulta += ('estado = '+datos.disponible);
-                    console.log(consulta);
-                    } 
-                    else{
-                    consulta += (' and estado = '+ datos.disponible);
-                    console.log(consulta);
-                    }
-            }   
-            
         }
         else{
             consulta = "select * from tabla_Libros";
         }
-
+        console.log(consulta);
         return consulta;
     }
 }
