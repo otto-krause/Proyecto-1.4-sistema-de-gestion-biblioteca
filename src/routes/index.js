@@ -64,4 +64,5 @@ router.post('/libros', async(req,res)=>{
     res.redirect('./libros');
 });
 
+router.get('/libros/search')
 module.exports = router;

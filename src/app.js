@@ -26,15 +26,7 @@ app.engine('.hbs',exphbs({
     helpers: require('./lib/handlebars')
 }));
 app.set('view engine', '.hbs');
-Handlebars.registerHelper('selected0', (datos)=> {
-    if(datos.disponible != '')
-    {
-        return 'selected'; 
-    }
-    else{
 
-    }
-})
 //middlewares
 app.use(session({
     secret: 'TeBochaGrispi3',

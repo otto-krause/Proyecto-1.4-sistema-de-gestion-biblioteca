@@ -5,6 +5,9 @@ const path = require('path');
 router.get("/css/1", (req,res)=>{
     res.sendFile(path.join(__dirname,"../public/css/bootstrap.min.css"));
 });
+router.get("/scripts/4", (req, res)=>{
+    res.sendFile(path.join(__dirname,"../public/scripts/handlebars.runtime-v4.4.3.jstrap.min.js"));    
+});
 router.get("/scripts/3", (req, res)=>{
     res.sendFile(path.join(__dirname,"../public/scripts/bootstrap.min.js"));    
 });
