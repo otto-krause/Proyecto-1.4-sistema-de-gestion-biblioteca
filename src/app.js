@@ -1,4 +1,5 @@
 //imports
+'use strict'
 const express = require('express');
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
@@ -11,6 +12,8 @@ const passport = require('passport');
 const {database} = require('./keys')
 const{isLoggedIn, isNotLoggedIn}= require('./lib/auth');
 const Handlebars = require('handlebars');
+const cors = require('cors');
+const https = require('https');
 //inicializaciones
 const app = express();
 require('./lib/passport');
@@ -26,12 +29,23 @@ app.engine('.hbs',exphbs({
     helpers: require('./lib/handlebars')
 }));
 app.set('view engine', '.hbs');
+Handlebars.registerHelper('selected0', (datos)=> {
+    if(datos.disponible != '')
+    {
+        return 'selected'; 
+    }
+    else{
 
+    }
+})
 //middlewares
 app.use(session({
     secret: 'TeBochaGrispi3',
     resave: false,
-    saveUninitialized:false,
+    cookie:{
+        maxAge: 30*60
+    },
+    saveUninitialized: false,
     store: MySQLStore(database)
 }));
 app.use(flash());
@@ -40,11 +54,14 @@ app.use(express.urlencoded({
     extended: false
 }));
 app.use(express.json());
-
+app.use(cors({
+    allowedHeaders: 'Access-Control-Allow-Origin: *'
+}));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
+app.disable('view cache');
 
 //variables globales
 app.use((req, res, next)=>{
@@ -52,6 +69,8 @@ app.use((req, res, next)=>{
     app.locals.IsAuth = req.flash('auth');
     app.locals.needsLogin = req.flash('needsLogin');
     app.locals.user = req.user;
+    app.locals._user = req.user;
+    //app.locals.
     next();
 });
 app.get('/img/',(req, res)=>{
@@ -59,13 +78,12 @@ app.get('/img/',(req, res)=>{
 });
 //rutas
 app.use(require('./routes/index'));
-app.use('/auth',require('./routes/authentication'));
 app.use('/control',isLoggedIn,require('./routes/control'));
-app.use('/public', require('./routes/srcFiles'))
+app.use('/auth',require('./routes/authentication'));
 //archivos publicos
-app.use(express.static(path.join(__dirname,'public')));
-
+app.use('/public' , express.static(__dirname +'/public'));
 //link start!
+
 app.listen(app.get('port'),()=>{
     console.log(`BlbliOK | Servidor iniciado en puerto ${app.get('port')}`);
 

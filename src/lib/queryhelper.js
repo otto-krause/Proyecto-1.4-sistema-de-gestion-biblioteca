@@ -1,6 +1,7 @@
 module.exports = {
     searchFormQuery(datos, consulta){
-        if(datos){   
+        console.log(datos);
+        if(datos && datos != 0){
             console.log(Object.keys(datos).length);
             console.log(Object.values(datos)[0]);
             for(let i = 0; i < Object.keys(datos).length; i++)

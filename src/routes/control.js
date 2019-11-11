@@ -3,12 +3,11 @@ const router = express.Router();
 const pool = require('../database.js');
 const {isLoggedIn, isNotLoggedIn} = require('../lib/auth');
 
-router.get('/', async(req,res)=>{
+router.get('/',isLoggedIn, async(req,res)=>{
     res.render('../views/control/control.hbs');
 });
 
-router.get('/add', (req, res)=>{
-    
+router.get('/add', (req, res)=>{ 
     res.render('../views/control/add.hbs');
 });
 

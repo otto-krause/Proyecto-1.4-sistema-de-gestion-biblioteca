@@ -1,0 +1,10 @@
+* = en desarrollo
+** = terminado
+operaciones a realizar
+-realizar pedido (carrito
+-consultar pedidos
+-dar pedido de baja
+-registrar socio
+-consultar socios
+-añadir libro
+-consultar libros (integrar añadir al "carrito");

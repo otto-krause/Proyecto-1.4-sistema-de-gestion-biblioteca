@@ -2,6 +2,9 @@
       <table class="table">
         <thead>
           <tr>
+            {{#if user}}
+              <th scope="col" id="">Añadir al pedido</th>
+            {{/if}}
             <th scope="col">Codigo Libro</th>
             <th scope="col">ISBN</th>
             <th scope="col">Título del libro</th>
@@ -9,12 +12,16 @@
             <th scope="col">Apellido autor</th>
             <th scope="col">Editorial</th>
             <th scope="col">Estado</th>
+            
           </tr>
         </thead>
         <tbody>
-          {{#if rows}}
+          {{#if user}}
             {{#each rows}}
-            <tr>
+            <tr id="libDataRow{{@index}}">
+                <td>
+                  <img src="/public/img/icon-add.png" role="button" onclick="addToCart($('libDataRow{{@index}}'))">
+                </td>
               <th scope="row">{{cod_libro}}</th>
               <td>{{isbn}}</td>
               <td class="font-weight-bold">{{titulo}}</td>
@@ -23,9 +30,28 @@
               <td>{{editorial}}</td>
               <td>{{estado}}</td>
             </tr>
-            {{/each}}
-          {{else}}
+            {{else}}
           <tr class="font-weight-bold">No hay resultados</tr>
-          {{/if}}
+            {{/each}}
+        {{/if}}
+        {{#unless user}}
+          {{#each rows}}
+            <tr id="libDataRow{{@index}}">
+              <th scope="row">{{cod_libro}}</th>
+              <td>{{isbn}}</td>
+              <td class="font-weight-bold">{{titulo}}</td>
+              <td>{{nombre}}</td>
+              <td>{{apellido}}</td>
+              <td>{{editorial}}</td>
+              <td>{{estado}}</td>
+            </tr>
+            {{else}}
+          <tr class="font-weight-bold">No hay resultados</tr>
+            {{/each}}
+
+        {{/unless}}
+            
+
+
         </tbody>
       </table>

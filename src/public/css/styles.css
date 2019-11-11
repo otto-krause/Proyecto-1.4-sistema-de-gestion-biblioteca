@@ -1,3 +1,53 @@
-div{
-  color: brown;  
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+section{
+  min-height: 100vh;
+}
+/*libros.hbs*/
+@media(min-width: 768px) {
+  .collapse.dont-collapse-sm {
+      display: block;
+      height: auto !important;
+      visibility: visible;
+  }
+}
+/*Home.hbs*/
+.masthead{
+  height:100vh;
+  background-image: url('/public/img/background.png');
+  background-size:cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-clip: border-box;
+}
+#titulo{
+  background-color: #5757576c;
+}
+/*navbar*/
+@media screen and (max-width:441px) {
+  .hide-this{
+    display:none;
+  }
+}
+#usericon{
+  box-sizing: content-box;
+  height: 2rem;
+  width: 2rem;
+}
+/*control*/
+.height100{
+  height: 100vh;
+}
+/*footer*/
+#redes li{
+  display: inline-block;
+  list-style-type: none;
 }

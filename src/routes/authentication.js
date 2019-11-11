@@ -5,6 +5,9 @@ const pool = require('../database.js');
 const helpers = require('../lib/helpers');
 const {isLoggedIn, isNotLoggedIn} = require('../lib/auth');
 
+router.get('/', (req,res)=>{
+
+});
 router.get("/logout",(req,res)=>{
     req.logOut();
     res.redirect('/');
@@ -20,7 +23,6 @@ router.post("/login", async(req,res,next)=>{
             failureRedirect: '/auth/login',
             failureFlash: true
         })(req,res,next);  
-    
 });
 
 module.exports = router;

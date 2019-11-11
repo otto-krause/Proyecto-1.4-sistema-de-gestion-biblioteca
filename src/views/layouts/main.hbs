@@ -1,38 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="icon" type="image/png" href="#">
-        <title>Sistema de gestión de biblioteca - Otto Krause</title>
-        <link rel='stylesheet' href= "../public/css/1">
-        <script src="../public/scripts/1"></script>
-        <script src="../public/scripts/2"></script>
-        <script src="../public/scripts/3"></script>
-        <script src="../public/scripts/4"></script>
-    </head>
-    <body class="h-100">
-        {{>navigation}}    
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="/public/img/book.png">
+    <title>Sistema de gestión de biblioteca - Otto Krause</title>
+    <link rel='stylesheet' href="/public/css/bootstrap.min.css">
+    <link rel='stylesheet' href="/public/css/styles.css">
+    <script src="/public/scripts/jquery.min.js"></script>
+    <script src="/public/scripts/bootstrap.min.js"></script>
+    <script src="/public/scripts/handlebars-v4.4.3.js"></script>
+    <script src="/public/scripts/popper.min.js"></script>
+    <script src="/public/scripts/biblioteca.js"></script>
+</head>
+
+<body>
+    {{>navigation}}
+    <section class="w-100">
         {{{body}}}
-    </body>
-    <footer class="justify-content-center text-center text-white bg-dark container-fluid" aria-hidden="false">
-        <div>Escuela técnica N°1 D.E. 4° Otto Krause</div>
-        <div>Desarrollado por 6CI1 (2019)</div>
-    </footer>
-    <style>
-        html{
-            position: relative;
-            min-height: 100%;
-        }
-        body{
-            height:100vh;
-        }
-        footer{
-            padding-top: 3px;
-            padding-bottom: 3px;
-            position:absolute;
-            bottom: -5;
-        }
-    </style>
+    </section>
+    {{>footer}}
+    </div>
+</body>
+
 </html>
